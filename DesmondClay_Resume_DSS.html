@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desmond W. Clay | Interactive Resume</title>
+    <link rel="stylesheet" href="dss.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: var(--dss-color-background-primary);
+            padding: 2rem 1rem;
+        }
+        
+        .resume-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }        
+        /* Hero section with massive impact */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0, 224, 255, 0.15), rgba(102, 126, 234, 0.15));
+            border: 3px solid var(--dss-color-accent-glow);
+            padding: 4rem 3rem;
+            margin-bottom: 2.5rem;
+            clip-path: polygon(
+                var(--dss-cut-size) 0,
+                100% 0,
+                100% calc(100% - var(--dss-cut-size)),
+                calc(100% - var(--dss-cut-size)) 100%,
+                0 100%,
+                0 var(--dss-cut-size)
+            );
+            box-shadow: 
+                0 0 var(--dss-glow-blur) var(--dss-glow-spread) var(--dss-color-accent-glow),
+                inset 0 0 60px rgba(0, 224, 255, 0.1);
+            position: relative;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--dss-color-accent-glow), #6642a2, var(--dss-color-accent-glow));
+            opacity: 0.3;
+            z-index: -1;
+            clip-path: inherit;
+            filter: blur(15px);
+        }
+        
+        .hero-title {
+            font-family: var(--dss-font-mono);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--dss-color-text-primary);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 30px var(--dss-color-accent-glow);
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
+        }
+        
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--dss-color-accent-glow);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 15px var(--dss-color-accent-glow);
+        }
+        
+        .hero-subtagline {
+            font-size: 1.1rem;
+            color: var(--dss-color-text-secondary);
+            font-style: italic;
+            margin-bottom: 2.5rem;
+        }
+        
+        .hero-contact {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.05rem;
+            font-family: var(--dss-font-mono);
+        }
+        
+        .hero-contact a {
+            color: var(--dss-color-accent-glow);
+            text-decoration: none;
+            border-bottom: 2px solid var(--dss-color-accent-glow);
+            padding-bottom: 3px;
+            transition: all var(--dss-animation-speed);
+        }
+        
+        .hero-contact a:hover {
+            text-shadow: 0 0 20px var(--dss-color-accent-glow);
+            border-bottom-width: 3px;
+        }
+        
+        /* AI Banner - highly prominent */
+        .ai-banner {
+            background: linear-gradient(135deg, rgba(159, 191, 254, 0.2), rgba(118, 75, 162, 0.2));
+            border: 2px solid #9fbffe;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            clip-path: polygon(
+                20px 0,
+                100% 0,
+                100% calc(100% - 20px),
+                calc(100% - 20px) 100%,
+                0 100%,
+                0 20px
+            );
+            box-shadow: 0 0 25px rgba(159, 191, 254, 0.4);
+        }
+        
+        .ai-banner h3 {
+            font-family: var(--dss-font-mono);
+            font-size: 1.4rem;
+            color: #9fbffe;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
+        }
+        
+        .ai-banner p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--dss-color-text-primary);
+        }
+        
+        .ai-banner strong {
+            color: #9fbffe;
+            font-weight: 700;
+            text-shadow: 0 0 10px #9fbffe;
+        }
+        
+        /* DSS Cards with strong geometric identity */
+        .dss-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title {
+            font-family: var(--dss-font-mono);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dss-color-accent-glow);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--dss-color-accent-glow);
+            text-shadow: 0 0 15px var(--dss-color-accent-glow);
+        }
+        
+        .experience-card {
+            background: rgba(var(--dss-color-background-module-rgb), var(--dss-module-opacity));
+            backdrop-filter: blur(var(--dss-backdrop-blur));
+            border: var(--dss-border-thickness) solid var(--dss-color-border-primary);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            clip-path: polygon(
+                var(--dss-cut-size) 0,
+                100% 0,
+                100% calc(100% - var(--dss-cut-size)),
+                calc(100% - var(--dss-cut-size)) 100%,
+                0 100%,
+                0 var(--dss-cut-size)
+            );
+            box-shadow: 0 0 var(--dss-glow-blur) var(--dss-glow-spread) var(--dss-color-accent-glow);
+            transition: all var(--dss-animation-speed);
+        }
+        
+        .experience-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 0 calc(var(--dss-glow-blur) * 2) calc(var(--dss-glow-spread) * 2) var(--dss-color-accent-glow);
+        }
+        
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .exp-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dss-color-text-primary);
+        }
+        
+        .exp-company {
+            color: var(--dss-color-accent-glow);
+            font-weight: 700;
+            font-size: 1.15rem;
+            text-shadow: 0 0 10px var(--dss-color-accent-glow);
+        }
+        
+        .exp-date {
+            font-family: var(--dss-font-mono);
+            color: var(--dss-color-text-secondary);
+            font-size: 1rem;
+        }
+        
+        .exp-highlights {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .exp-highlights li {
+            padding-left: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            line-height: 1.9;
+            color: var(--dss-color-text-secondary);
+        }
+        
+        .exp-highlights li::before {
+            content: "‚ñ∏";
+            position: absolute;
+            left: 0.5rem;
+            color: var(--dss-color-accent-glow);
+            font-size: 1.8em;
+            text-shadow: 0 0 10px var(--dss-color-accent-glow);
+        }
+        
+        .exp-highlights strong {
+            color: var(--dss-color-text-primary);
+            font-weight: 700;
+        }
+        
+        .exp-highlights em {
+            color: var(--dss-color-accent-glow);
+            font-style: normal;
+            font-weight: 600;
+        }
+        
+        .exp-highlights a {
+            color: var(--dss-color-accent-glow);
+            text-decoration: none;
+            border-bottom: 1px solid var(--dss-color-accent-glow);
+            transition: all var(--dss-animation-speed);
+        }
+        
+        .exp-highlights a:hover {
+            text-shadow: 0 0 12px var(--dss-color-accent-glow);
+            border-bottom-width: 2px;
+        }
+        
+        /* Skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-card {
+            background: rgba(var(--dss-color-background-module-rgb), 0.5);
+            border: 2px solid var(--dss-color-border-primary);
+            padding: 1.5rem;
+            clip-path: polygon(
+                15px 0,
+                100% 0,
+                100% calc(100% - 15px),
+                calc(100% - 15px) 100%,
+                0 100%,
+                0 15px
+            );
+            transition: all var(--dss-animation-speed);
+        }
+        
+        .skill-card:hover {
+            border-color: var(--dss-color-accent-glow);
+            box-shadow: 0 0 20px rgba(0, 224, 255, 0.3);
+        }
+        
+        .skill-card-title {
+            font-family: var(--dss-font-mono);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dss-color-accent-glow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .skill-card-content {
+            font-size: 0.95rem;
+            color: var(--dss-color-text-secondary);
+            line-height: 1.8;
+        }
+        
+        .skill-card-content a {
+            color: var(--dss-color-accent-glow);
+            text-decoration: none;
+            border-bottom: 1px solid var(--dss-color-accent-glow);
+        }
+        
+        .skill-card-content a:hover {
+            text-shadow: 0 0 12px var(--dss-color-accent-glow);
+        }
+        
+        /* Project showcase cards - bold geometric */
+        .project-showcase {
+            background: linear-gradient(135deg, rgba(0, 224, 255, 0.08), rgba(102, 117, 207, 0.08));
+            border: 3px solid var(--dss-color-accent-glow);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            clip-path: polygon(
+                25px 0,
+                100% 0,
+                100% calc(100% - 25px),
+                calc(100% - 25px) 100%,
+                0 100%,
+                0 25px
+            );
+            box-shadow: 
+                0 0 20px rgba(0, 224, 255, 0.4),
+                inset 0 0 40px rgba(0, 224, 255, 0.05);
+            transition: all var(--dss-animation-speed);
+        }
+        
+        .project-showcase:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 0 30px rgba(0, 224, 255, 0.6),
+                inset 0 0 40px rgba(0, 224, 255, 0.05);
+        }
+        
+        .project-title {
+            font-family: var(--dss-font-mono);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dss-color-text-primary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .project-subtitle {
+            font-size: 1.05rem;
+            color: var(--dss-color-accent-glow);
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .project-desc {
+            line-height: 1.9;
+            color: var(--dss-color-text-secondary);
+            margin-bottom: 1.25rem;
+        }
+        
+        .project-desc strong {
+            color: var(--dss-color-text-primary);
+            font-weight: 700;
+        }
+        
+        .tech-stack {
+            font-family: var(--dss-font-mono);
+            font-size: 0.9rem;
+            color: var(--dss-color-accent-glow);
+            padding: 1rem 1.5rem;
+            background: rgba(0, 224, 255, 0.1);
+            border-left: 4px solid var(--dss-color-accent-glow);
+            clip-path: polygon(
+                10px 0,
+                100% 0,
+                100% calc(100% - 10px),
+                calc(100% - 10px) 100%,
+                0 100%,
+                0 10px
+            );
+        }
+        
+        .tech-stack a {
+            color: var(--dss-color-accent-glow);
+            text-decoration: none;
+            border-bottom: 1px solid var(--dss-color-accent-glow);
+        }
+        
+        .tech-stack a:hover {
+            text-shadow: 0 0 12px var(--dss-color-accent-glow);
+        }
+        
+        /* Career narrative box */
+        .narrative-box {
+            background: linear-gradient(135deg, rgba(246, 173, 85, 0.15), rgba(213, 137, 16, 0.15));
+            border-left: 5px solid #f6ad55;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            clip-path: polygon(
+                20px 0,
+                100% 0,
+                100% calc(100% - 20px),
+                calc(100% - 20px) 100%,
+                0 100%,
+                0 20px
+            );
+            box-shadow: 0 0 15px rgba(246, 173, 85, 0.3);
+        }
+        
+        .narrative-box strong {
+            color: #f6ad55;
+            font-weight: 700;
+            text-shadow: 0 0 10px #f6ad55;
+        }
+        
+        .narrative-box p {
+            line-height: 1.9;
+            color: var(--dss-color-text-secondary);
+            font-size: 1.05rem;
+        }
+        
+        /* Summary text */
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--dss-color-text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .summary strong {
+            color: var(--dss-color-accent-glow);
+            font-weight: 700;
+        }
+        
+        /* Philosophy banner */
+        .philosophy-banner {
+            background: linear-gradient(135deg, rgba(72, 187, 120, 0.15), rgba(56, 161, 105, 0.15));
+            border-left: 5px solid #48bb78;
+            padding: 2rem;
+            margin: 2rem 0;
+            clip-path: polygon(
+                18px 0,
+                100% 0,
+                100% calc(100% - 18px),
+                calc(100% - 18px) 100%,
+                0 100%,
+                0 18px
+            );
+            box-shadow: 0 0 15px rgba(72, 187, 120, 0.3);
+        }
+        
+        .philosophy-banner h3 {
+            font-family: var(--dss-font-mono);
+            font-size: 1.2rem;
+            color: #48bb78;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .philosophy-banner p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--dss-color-text-secondary);
+        }
+        
+        .philosophy-banner strong {
+            color: #48bb78;
+            font-weight: 700;
+            text-shadow: 0 0 8px #48bb78;
+        }
+        
+        /* Continuity note */
+        .continuity-note {
+            font-size: 0.9rem;
+            color: var(--dss-color-text-secondary);
+            font-style: italic;
+            margin-top: 1.5rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+        
+        /* Footer note */
+        .footer-dss {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            margin-top: 3rem;
+            background: rgba(var(--dss-color-background-module-rgb), 0.3);
+            border-top: 2px solid var(--dss-color-accent-glow);
+            color: var(--dss-color-text-secondary);
+            font-family: var(--dss-font-mono);
+            font-size: 0.95rem;
+        }
+        
+        .footer-dss strong {
+            color: var(--dss-color-accent-glow);
+            text-shadow: 0 0 10px var(--dss-color-accent-glow);
+        }
+        
+        @media print {
+            body {
+                background: #0d1117;
+            }
+            
+            .experience-card:hover,
+            .project-showcase:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="dss-bg-dots">
+    <div class="resume-wrapper">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1 class="hero-title">Desmond W. Clay</h1>
+            <div class="hero-tagline">Full-Stack Developer & Systems Architect</div>
+            <div class="hero-subtagline">Leveraging Modern AI Tools to Accelerate Innovation</div>
+            <div class="hero-contact">
+                <span>üìû (315) 338-4480</span>
+                <a href="mailto:D.W.Clay94@gmail.com">‚úâÔ∏è D.W.Clay94@gmail.com</a>
+                <a href="https://github.com/dezmetal/Resume" target="_blank">üíª github.com/dezmetal/Resume</a>
+            </div>
+        </div>
+
+        <!-- AI Partnership Banner -->
+        <div class="ai-banner">
+            <h3>ü§ñ Next-Generation Development Approach</h3>
+            <p>
+                Since 2019, I've embraced <strong>AI-enhanced development workflows</strong> as a productivity multiplier‚Äîwell ahead of mainstream adoption. My approach combines strategic tool selection (coding assistants, LLM APIs, automation frameworks) with <strong>rapid prototyping capabilities</strong> that compress development timelines from weeks to hours. This isn't about replacing developer judgment; it's about <strong>amplifying output while maintaining quality</strong> through intelligent integration of modern technologies.
+            </p>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="dss-section">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="experience-card">
+                <p class="summary">
+                    Independent developer operating under the <strong>D-Net Lab</strong> brand, delivering technical solutions through freelance contracts and continuous product innovation. Over 5+ years, built <strong>10 production-ready applications</strong> spanning enterprise SaaS platforms, workflow automation systems, and e-commerce integration tools‚Äîdemonstrating versatility across full-stack development, system architecture, and ML/AI implementation.
+                </p>
+                <p class="summary">
+                    What sets me apart: the <strong>mind to architect creative solutions</strong>, the <strong>motivation to learn rapidly</strong>, the <strong>discretion to make sound technical decisions</strong>, and the <strong>imagination to see possibilities others miss</strong>. Whether integrating local ML models for privacy-first voice processing, designing plugin architectures that auto-generate UIs, or building automated print-on-demand pipelines serving real clients, I bring both technical depth and entrepreneurial problem-solving to every challenge.
+                </p>
+            </div>
+        </div>
+
+        <!-- Core Competencies -->
+        <div class="dss-section">
+            <h2 class="section-title">Core Competencies & Modern Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-card-title">AI & ML Integration</div>
+                    <div class="skill-card-content">LLM Orchestration (Gemini, llama-cpp-python) ‚Ä¢ Agent Function-Calling ‚Ä¢ Prompt Engineering & Optimization ‚Ä¢ Local ASR (Whisper) ‚Ä¢ Context Management ‚Ä¢ Computer Vision (EasyOCR, OpenCV) ‚Ä¢ Neural TTS (Piper) with Procedural Enhancement ‚Ä¢ <a href="https://github.com/dezmetal/Resume/tree/main/AI_ML" target="_blank">Examples ‚Üí</a></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-title">Backend & APIs</div>
+                    <div class="skill-card-content">Python (Extensive) ‚Ä¢ Flask ‚Ä¢ SQLAlchemy ORM ‚Ä¢ REST API Design ‚Ä¢ WebSocket Communication ‚Ä¢ File-Based IPC ‚Ä¢ Session & API Key Auth ‚Ä¢ Rate Limiting ‚Ä¢ <a href="https://github.com/dezmetal/Resume/tree/main/Backend" target="_blank">Code ‚Üí</a></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-title">Frontend & UI/UX</div>
+                    <div class="skill-card-content">JavaScript (ES6+) ‚Ä¢ HTML5/CSS3 ‚Ä¢ Jinja2 ‚Ä¢ Alpine.js ‚Ä¢ Custom Design Systems ‚Ä¢ CKEditor ‚Ä¢ Responsive Layouts ‚Ä¢ Theme Architecture ‚Ä¢ <a href="https://github.com/dezmetal/Resume/tree/main/Frontend" target="_blank">Demos ‚Üí</a></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-title">Commerce & Monetization</div>
+                    <div class="skill-card-content">Stripe API (Checkout, Subscriptions, Webhooks) ‚Ä¢ Usage-Based Billing ‚Ä¢ Multi-Tier Access Control ‚Ä¢ Printify Integration ‚Ä¢ Automated Product Deployment ‚Ä¢ <a href="https://github.com/dezmetal/Resume/tree/main/Commerce" target="_blank">Examples ‚Üí</a></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-title">Cloud & DevOps</div>
+                    <div class="skill-card-content">Docker ‚Ä¢ Google Cloud Platform (Build, Run, Storage) ‚Ä¢ CI/CD Pipelines ‚Ä¢ Git/GitHub ‚Ä¢ Environment Management ‚Ä¢ Production Security ‚Ä¢ <a href="https://github.com/dezmetal/Resume/tree/main/DevOps" target="_blank">Configs ‚Üí</a></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-title">System Integration</div>
+                    <div class="skill-card-content">Leap Motion SDK ‚Ä¢ Global Input Hooks (pynput) ‚Ä¢ Audio Device Control ‚Ä¢ System Tray Apps ‚Ä¢ Desktop GUI (Tkinter, PySide) ‚Ä¢ Hardware Bridges ‚Ä¢ <a href="https://github.com/dezmetal/Resume/tree/main/Systems" target="_blank">Examples ‚Üí</a></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-title">Architecture Patterns</div>
+                    <div class="skill-card-content">Plugin/Extension Systems ‚Ä¢ Event-Driven Design ‚Ä¢ Service-Oriented Architecture ‚Ä¢ Pipeline Orchestration ‚Ä¢ Modular Components ‚Ä¢ Auto-Generated UIs</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-title">Professional Mindset</div>
+                    <div class="skill-card-content">Rapid Learning & Adaptation ‚Ä¢ Creative Problem-Solving ‚Ä¢ Independent Ownership ‚Ä¢ Technical Communication ‚Ä¢ Documentation ‚Ä¢ Collaboration</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="dss-section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-card">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-title">Independent Developer</span> | 
+                        <span class="exp-company">D-Net Lab</span>
+                    </div>
+                    <span class="exp-date">2019 ‚Äì Present</span>
+                </div>
+                <ul class="exp-highlights">
+                    <li>Operate under <strong>D-Net Lab</strong> brand delivering freelance technical solutions and continuous product development, demonstrating self-directed mastery and entrepreneurial initiative</li>
+                    <li>Built <strong>D-Net Platform</strong>: Multi-tenant SaaS <em>facilitating digital collaboration and creative expression</em>‚Äîusers deploy custom websites, AI-powered personas, and product catalogs without coding. Implements agent function-calling for natural language content creation, <strong>3-tier Stripe subscriptions</strong>, contextual memory (50 messages), role-based access <a href="https://github.com/dezmetal/Resume/tree/main/DNet" target="_blank">[Code]</a></li>
+                    <li>Developed <strong>DNetAether</strong>: Voice interface <em>expanding human bandwidth</em> by providing AI-powered processing at your fingertips‚Äîfeatures local Whisper ASR (privacy-first, offline-capable), 4 operational modes, automatic audio ducking, clipboard output working across applications <a href="https://github.com/dezmetal/Resume/tree/main/VTT" target="_blank">[Code]</a></li>
+                    <li>Created <strong>DNetCon</strong>: Orchestration hub <em>making any program an API</em> through file-based IPC‚Äîfeatures extensible plugin architecture with YAML introspection auto-generating web UI from Python modules, conditional logic, persistent data store, multi-trigger support <a href="https://github.com/dezmetal/Resume/tree/main/DNetComm" target="_blank">[Code]</a></li>
+                    <li>Engineered <strong>Print-on-Demand automation pipeline</strong> <em>democratizing e-commerce creation</em>‚Äîorchestrates ComfyUI image processing with Printify deployment, serving <strong>real clients generating revenue</strong>, features batch processing, watermark control, error recovery <a href="https://github.com/dezmetal/Resume/tree/main/dnet_pod" target="_blank">[Pipeline]</a> <a href="https://github.com/dezmetal/Resume/tree/main/comfy-api-mod" target="_blank">[Client]</a> <a href="https://github.com/dezmetal/Resume/tree/main/dnet_printify" target="_blank">[API]</a></li>
+                    <li>Designed <strong>procedural TTS enhancement</strong> using Perlin noise algorithms injecting organic variation into neural voices‚Äîdemonstrates audio signal processing expertise <a href="https://github.com/dezmetal/Resume/tree/main/StreamAudio" target="_blank">[Code]</a></li>
+                    <li>Implemented <strong>real-time usage metering</strong> with granular access control, rate limiting, webhook processing for subscription events</li>
+                    <li>Architected <strong>DSS framework</strong>: Geometric CSS library with clip-paths, theme vars, reusable components‚Äîcohesive visual identity <a href="https://github.com/dezmetal/Resume/blob/main/DNet/static/css/dss.css" target="_blank">[Code]</a></li>
+                    <li>Deployed to <em>Google Cloud Platform</em> using Docker, Cloud Build CI/CD, Cloud Run‚Äîconfigured HTTPS sessions, CORS policies, environment security</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-title">Delivery Driver & Independent Contractor</span> | 
+                        <span class="exp-company">DoorDash & Instacart</span>
+                    </div>
+                    <span class="exp-date">2020 ‚Äì 2024</span>
+                </div>
+                <ul class="exp-highlights">
+                    <li>Maintained <strong>continuous employment</strong> providing reliable logistics and customer service while developing D-Net Lab projects</li>
+                    <li>Demonstrated <strong>professional independence</strong>, time management, client interaction without supervision‚Äîtransferable to remote roles</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-title">Activities Team Lead</span> | 
+                        <span class="exp-company">Betsy Ross Nursing Home</span>
+                    </div>
+                    <span class="exp-date">2021 ‚Äì 2022</span>
+                </div>
+                <ul class="exp-highlights">
+                    <li>Led team designing engagement programs for 50+ residents, applying <strong>systematic planning and stakeholder communication</strong> used in technical work</li>
+                    <li>Balanced leadership with concurrent development, demonstrating <strong>dual-track focus and time management</strong></li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="exp-header">
+                    <div>
+                        <span class="exp-title">Sales Supervisor</span> | 
+                        <span class="exp-company">Harbor Freight Tools</span>
+                    </div>
+                    <span class="exp-date">2017 ‚Äì 2019</span>
+                </div>
+                <ul class="exp-highlights">
+                    <li>Built 8+ person team during store launch, achieving <strong>top-tier regional metrics</strong> through systematic training and optimization</li>
+                    <li>Developed <strong>leadership foundations and conflict resolution</strong> applicable to technical team coordination</li>
+                </ul>
+            </div>
+
+            <div class="continuity-note">
+                Additional professional experience (2012-2017) available upon request
+            </div>
+        </div>        <!-- Core Philosophy -->
+        <div class="philosophy-banner">
+            <h3>?? Core Development Philosophy</h3>
+            <p><strong>"With accessibility comes understanding and inspiration."</strong> Every project reflects this belief: democratizing modern capabilities empowers people to explore, learn, and createódriving human progress forward.</p>
+        </div>
+
+        <!-- Featured Projects -->
+        <div class="dss-section">
+            <h2 class="section-title">Featured Technical Projects</h2>
+            
+            <div class="project-showcase">
+                <div class="project-title">D-Net Platform</div>
+                <div class="project-subtitle">Multi-Tenant SaaS | Facilitating Digital Collaboration</div>
+                <div class="project-desc">
+                    <strong>Philosophy:</strong> In the modern age, everyone deserves their own virtual space for expression and operation. Instead of gatekeeping these capabilities, D-Net Platform <em>facilitates digital collaboration itself</em>óusers deploy websites, custom AI personalities, and product catalogs without technical barriers, enabling the "fuck around and find out" exploration that drives learning and inspiration.<br><br>
+                    <strong>Technical Achievement:</strong> Multi-tenant architecture supporting concurrent users with isolated data, AI agent function-calling for natural language content operations, 3-tier Stripe subscription system with usage metering, 50-message contextual memory per persona, role-based access control, CKEditor integration, custom theme system.<br><br>
+                    <strong>Impact:</strong> Demonstrates full-stack SaaS development, payment systems, AI integration, and scalable architecture.
+                </div>
+                <div class="tech-stack">Python ï Flask ï SQLAlchemy ï Google Gemini API ï Stripe (Subscriptions/Webhooks) ï Docker ï GCP ï CKEditor ï <a href="https://github.com/dezmetal/Resume/tree/main/DNet" target="_blank">View Code ?</a></div>
+            </div>
+
+            <div class="project-showcase">
+                <div class="project-title">DNetAether (Aether by D-Net)</div>
+                <div class="project-subtitle">Voice AI Assistant | Expanding Human Bandwidth</div>
+                <div class="project-desc">
+                    <strong>Philosophy:</strong> <em>Expanding human bandwidth</em> through AI-powered processing at your fingertips. Dictating this paragraph took seconds versus minutes of typingóthat's bandwidth. Any intention becomes text, code, or action instantly, with the <em>accessibility of AI with convenience</em>.<br><br>
+                    <strong>Technical Achievement:</strong> Global hotkey system working across all applications, local OpenAI Whisper ASR (privacy-first, offline-capable), 4 operational modes (PTT commands, toggle dictation, code generation, AI chat), automatic audio ducking via PyCaw, clipboard-based output injection, system tray application, ClickReader feature for accessibility.<br><br>
+                    <strong>Impact:</strong> Reduces typing by ~60% in personal use, enables hands-free coding/documentation, demonstrates local ML integration and system-level programming.
+                </div>
+                <div class="tech-stack">Python ï OpenAI Whisper ï Google Gemini ï Pynput (Global Hooks) ï Sounddevice ï Piper TTS ï PyAutoGUI ï PyCaw ï <a href="https://github.com/dezmetal/Resume/tree/main/VTT" target="_blank">View Code ?</a></div>
+            </div>
+
+            <div class="project-showcase">
+                <div class="project-title">DNetCon (Control by D-Net)</div>
+                <div class="project-subtitle">Pipeline Orchestration | Making Any Program an API</div>
+                <div class="project-desc">
+                    <strong>Philosophy:</strong> <em>Transforming any program into an API</em> for true interconnectivity. Run pipelines of logic operationsóread files, compare data, modify datastores, pipe outputs. A central control hub with limitless potential as imagination allows.<br><br>
+                    <strong>Technical Achievement:</strong> Extensible plugin architecture where Python modules use YAML-formatted docstrings to auto-generate web UIódevelopers add functionality without touching frontend. File-based IPC for cross-application coordination, conditional execution logic, persistent JSON datastore with dynamic variable substitution ($OUTPUT, $STORE{key}), multiple trigger types (manual, schedule, file-watch), Flask + Alpine.js web interface.<br><br>
+                    <strong>Impact:</strong> Enables voice-controlled workflows via DNetAether integration, demonstrates plugin system design and architecture thinking.
+                </div>
+                <div class="tech-stack">Python ï Flask ï Alpine.js ï JSON Config ï File Watchers ï IPC Buffers ï YAML Parsing ï <a href="https://github.com/dezmetal/Resume/tree/main/DNetComm" target="_blank">View Code ?</a></div>
+            </div>
+
+            <div class="project-showcase">
+                <div class="project-title">Print-on-Demand Automation Pipeline</div>
+                <div class="project-subtitle">E-Commerce Automation | Production Tool Serving Real Clients</div>
+                <div class="project-desc">
+                    <strong>Philosophy:</strong> <em>Democratizing e-commerce creation</em> by automating the entire workflow from image processing to product deployment. Real clients, real revenue, real impact.<br><br>
+                    <strong>Technical Achievement:</strong> Integrated system combining <strong>dnet_pod</strong> (orchestrator), <strong>comfy-api-mod</strong> (ComfyUI Python client for programmatic workflow control), and <strong>dnet_printify</strong> (Printify API wrapper). Features batch image processing, dynamic node bypassing (watermarks on/off), template-based product generation, error recovery with continue-on-error modes, progress tracking, dry-run capabilities.<br><br>
+                    <strong>Impact:</strong> Currently serving paying clients, demonstrates API integration, workflow automation, production-ready error handling, and business value delivery.
+                </div>
+                <div class="tech-stack">Python ï ComfyUI API ï Printify API ï WebSocket ï Batch Processing ï Configuration Management ï <a href="https://github.com/dezmetal/Resume/tree/main/dnet_pod" target="_blank">dnet_pod ?</a> <a href="https://github.com/dezmetal/Resume/tree/main/comfy-api-mod" target="_blank">comfy-api-mod ?</a> <a href="https://github.com/dezmetal/Resume/tree/main/dnet_printify" target="_blank">dnet_printify ?</a></div>
+            </div>
+
+            <div class="project-showcase">
+                <div class="project-title">VirtualLense</div>
+                <div class="project-subtitle">Screen Analysis Engine | Automation \u0026 Bandwidth Tool</div>
+                <div class="project-desc">
+                    <strong>Philosophy:</strong> <em>Increasing bandwidth and enabling automation</em> through screen region analysis. Configurable overlay "lenses" process screen areas in real-time, piping data to other programs or triggering actions.<br><br>
+                    <strong>Technical Achievement:</strong> Custom Tkinter overlay widgets with transparent regions, EasyOCR integration for real-time text extraction, change detection monitoring, configurable analysis regions, data export capabilities.<br><br>
+                    <strong>Impact:</strong> Enables automated screen scraping, monitoring, and integration workflowsódemonstrates GUI programming and computer vision application.
+                </div>
+                <div class="tech-stack">Python ï Tkinter ï EasyOCR ï OpenCV ï Custom Widgets ï Real-Time Processing ï <a href="https://github.com/dezmetal/Resume/tree/main/VirtualLense" target="_blank">View Code ?</a></div>
+            </div>
+
+            <div class="project-showcase">
+                <div class="project-title">IsekaiAdventure</div>
+                <div class="project-subtitle">AI Language Learning RPG | Dual-Language Story Generation</div>
+                <div class="project-desc">
+                    <strong>Philosophy:</strong> <em>Learning through play and exploration.</em> An AI-generated story where you're transported to a world speaking Japaneseóonly your guide understands you until you learn the language.<br><br>
+                    <strong>Technical Achievement:</strong> Dual-language content generation (Japanese + English), intelligent context management algorithm using hybrid approach (recent messages + summarized history), persistent character relationships, progressive language difficulty scaling.<br><br>
+                    <strong>Impact:</strong> Demonstrates creative AI application, context window optimization, and educational technology design.
+                </div>
+                <div class="tech-stack">Python ï Google Gemini ï Context Management Algorithms ï Dual-Language Processing ï <a href="https://github.com/dezmetal/Resume/tree/main/IsekaiAdventure" target="_blank">View Code ?</a></div>
+            </div>
+
+            <div class="project-showcase">
+                <div class="project-title">AirControl</div>
+                <div class="project-subtitle">Gesture-Based Computer Control | Hardware Integration</div>
+                <div class="project-desc">
+                    <strong>Philosophy:</strong> <em>Exploring new interaction paradigms.</em> Control your machine like Tony Stark through hand gestures captured by Leap Motion sensor.<br><br>
+                    <strong>Technical Achievement:</strong> Leap Motion SDK integration (Python bindings), web-based pose training UI for custom gesture definitions, real-time gesture matching algorithms, configurable control mappings, low-latency input translation.<br><br>
+                    <strong>Impact:</strong> Demonstrates hardware-software interfacing, real-time signal processing, and creative HCI exploration.
+                </div>
+                <div class="tech-stack">Python ï Leap Motion SDK ï Custom Pose Training ï Real-Time Gesture Recognition ï Web UI ï <a href="https://github.com/dezmetal/Resume/tree/main/AirControl" target="_blank">View Code ?</a></div>
+            </div>
+
+            <div class="project-showcase">
+                <div class="project-title">Choir</div>
+                <div class="project-subtitle">Autonomous AI System | Unbiased Intelligence Platform</div>
+                <div class="project-desc">
+                    <strong>Philosophy:</strong> <em>Creating unbiased, motivation-free autonomous intelligence.</em> A platform where LLMs or any intelligence system can perceive, create mental artifacts, and think continuously without human promptsóemulating neural network operation.<br><br>
+                    <strong>Technical Achievement:</strong> Local LLM integration (llama-cpp-python with GGUF models), continuous cognitive loop operating autonomously while idle, perception and artifact creation systems, pluggable intelligence architecture supporting both local and cloud LLMs.<br><br>
+                    <strong>Impact:</strong> Demonstrates autonomous agent architecture, local ML deployment, and philosophical approach to artificial intelligence.
+                </div>
+                <div class="tech-stack">Python ï llama-cpp-python ï GGUF Models ï Autonomous Agent Architecture ï Cognitive Loop System ï <a href="https://github.com/dezmetal/Resume/tree/main/Choir" target="_blank">View Code ?</a></div>
+            </div>
+
+            <div class="project-showcase">
+                <div class="project-title">DeckGen</div>
+                <div class="project-subtitle">Study Card Generator | Video/Audio Segmentation Platform</div>
+                <div class="project-desc">
+                    <strong>Philosophy:</strong> <em>Accessibility to learning tools.</em> Transform video lectures or audio content into organized study cards for spaced repetition learning (Anki).<br><br>
+                    <strong>Technical Achievement:</strong> Asynchronous WebSocket processing for large files, dual translation providers (Argos Translate local + Gemini cloud fallback), intelligent sentence-level segmentation, preview workspace with card editing, multiple export formats (Anki, JSON, ZIP), freemium licensing system.<br><br>
+                    <strong>Impact:</strong> Enables efficient study material creation from media, demonstrates async processing and multi-provider architecture.
+                </div>
+                <div class="tech-stack">Python ï OpenAI Whisper ï Argos Translate ï Google Gemini ï WebSockets ï FFmpeg ï Async Processing ï <a href="https://github.com/dezmetal/Resume/tree/main/DeckGen" target="_blank">View Code ?</a></div>
+            </div>
+
+            <div class="project-showcase">
+                <div class="project-title">StreamAudio (Procedural TTS Dynamics)</div>
+                <div class="project-subtitle">Neural Voice Enhancement | Audio Signal Processing</div>
+                <div class="project-desc">
+                    <strong>Philosophy:</strong> <em>Enhancing accessibility through better synthetic voices.</em> Neural TTS sounds robotic without variationóinjecting organic dynamics makes it more natural and pleasant.<br><br>
+                    <strong>Technical Achievement:</strong> Perlin noise algorithms generating smooth, organic pitch and speed variations in real-time, Piper TTS integration, SSML-like tag system for voice control, configurable dynamics parameters, multiple output options (direct playback, file export, streaming).<br><br>
+                    <strong>Impact:</strong> Used across multiple D-Net projects for voice output, demonstrates audio signal processing and algorithm implementation expertise.
+                </div>
+                <div class="tech-stack">Python ï Piper TTS ï Perlin Noise Algorithms ï Audio Processing ï SSML Parsing ï <a href="https://github.com/dezmetal/Resume/tree/main/StreamAudio" target="_blank">View Code ?</a></div>
+            </div>
+        </div>
+
+        <!-- Career Narrative -->
+        <div class="narrative-box">
+            <p>
+                <strong>Career Transition:</strong> From 2012-2020, I built strong foundations in leadership and operations management across retail and service industries, consistently earning promotions and recognition. Recognizing my technical aptitude was underutilized, I made a deliberate choice in 2019 to transition into software engineeringófounding D-Net Lab and investing 5+ years in intensive development while maintaining employment stability.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>Modern Development Approach:</strong> I recognized early that LLM-powered development tools would transform our industry. Rather than resist, I embraced them as amplifiers of developer capabilityómastering prompt engineering, AI-assisted workflows, and rapid prototyping techniques that compress timelines dramatically. The result: 10 production applications demonstrating both technical depth and forward-thinking adaptability. I'm ready to contribute this mindset, proven delivery capability, and passion for solving difficult problems to a team building the future.
+            </p>
+        </div>
+
+        <!-- Education -->
+        <div class="dss-section">
+            <h2 class="section-title">Education \u0026 Training</h2>
+            <div class="experience-card">
+                <div style="display: flex; gap: 3rem; flex-wrap: wrap; font-size: 1.05rem;">
+                    <div><strong>International Studies</strong> ó Mohawk Valley Community College</div>
+                    <div><strong>IT Systems (Networking)</strong> ó BOCES Career \u0026 Technical Education</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-dss">
+            This resume is styled with <strong>DSS (D-Net Signature Stylesheet)</strong><br>
+            A custom geometric CSS framework I created for the D-Net Platform
+        </div>
+    </div>
+</body>
+</html>
