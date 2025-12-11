@@ -17,30 +17,39 @@
             margin-bottom: 1.5rem;
             clip-path: polygon(var(--dss-cut-size) 0, 100% 0, 100% calc(100% - var(--dss-cut-size)), calc(100% - var(--dss-cut-size)) 100%, 0 100%, 0 var(--dss-cut-size));
             box-shadow: 0 0 var(--dss-glow-blur) var(--dss-glow-spread) var(--dss-color-accent-glow);
+            text-align: center;
         }
         .hero-title {
             font-family: var(--dss-font-mono);
             font-size: 2.4rem;
             font-weight: 700;
             color: var(--dss-color-text-primary);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.25rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-shadow: 0 0 20px var(--dss-color-accent-glow);
             border-bottom: none !important;
             padding-bottom: 0 !important;
         }
+        .hero-divider {
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--dss-color-accent-glow), transparent);
+            margin: 0.75rem auto;
+        }
         .hero-tagline {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--dss-color-accent-glow);
-            font-weight: 600;
-            margin-bottom: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
         }
         .hero-contact {
             display: flex;
+            justify-content: center;
             gap: 1.5rem;
             flex-wrap: wrap;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-family: var(--dss-font-mono);
         }
         .hero-contact a {
@@ -178,7 +187,6 @@
             margin-top: 0.75rem;
         }
         
-        /* Theme Toggle - hidden on print */
         .theme-toggle {
             position: fixed;
             bottom: 1rem;
@@ -218,7 +226,8 @@
     <div class="resume-wrapper">
         <div class="hero-section">
             <h1 class="hero-title">Desmond W. Clay</h1>
-            <div class="hero-tagline">Full-Stack Developer | AI Integration Specialist</div>
+            <div class="hero-divider"></div>
+            <div class="hero-tagline">Developer | Problem Solver | Rapid Learner</div>
             <div class="hero-contact">
                 <span>(315) 338-4480</span>
                 <a href="mailto:D.W.Clay94@gmail.com">D.W.Clay94@gmail.com</a>
@@ -279,16 +288,6 @@
 
             <div class="content-card">
                 <div class="exp-header">
-                    <div><span class="exp-title">Assistant Manager</span> | <span class="exp-company">Byrne Dairy</span></div>
-                    <span class="exp-date">2025</span>
-                </div>
-                <ul class="exp-highlights">
-                    <li>Manage daily store operations and lead team, providing guidance and training</li>
-                </ul>
-            </div>
-
-            <div class="content-card">
-                <div class="exp-header">
                     <div><span class="exp-title">Independent Contractor</span> | <span class="exp-company">DoorDash / Instacart</span></div>
                     <span class="exp-date">2020 - 2024</span>
                 </div>
@@ -304,6 +303,16 @@
                 </div>
                 <ul class="exp-highlights">
                     <li>Led team designing social programs for 50+ residents - planning and interpersonal skills</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <div class="exp-header">
+                    <div><span class="exp-title">Summer Camp Coach</span> | <span class="exp-company">Rome's Best</span></div>
+                    <span class="exp-date">2020</span>
+                </div>
+                <ul class="exp-highlights">
+                    <li>Supervised groups of up to 30 children, requiring patience, adaptability, and quick decision-making</li>
                 </ul>
             </div>
 
@@ -349,14 +358,20 @@
 
             <div class="project-item">
                 <div class="project-name">DNetAva <a href="https://github.com/dezmetal/Resume/tree/main/projects/DNetAva">[view]</a></div>
-                <div class="project-desc">Decoupled 3D avatar API - any application controls expressions, speech with lip-sync, gestures via REST/WebSocket payloads.</div>
-                <div class="project-tech">Three.js | WebSocket real-time | Viseme mapping | Git submodule integration</div>
+                <div class="project-desc">Secure API-based interaction layer for 3D environments. Any application can control the scene through authenticated REST/WebSocket payloads.</div>
+                <div class="project-tech">Three.js | WebSocket real-time | JWT-secured endpoints | Git submodule integration</div>
             </div>
 
             <div class="project-item">
                 <div class="project-name">StreamAudio <a href="https://github.com/dezmetal/Resume/tree/main/projects/StreamAudio">[view]</a></div>
                 <div class="project-desc">Neural TTS module with dynamic pitch/speed variation for natural speech. RVC voice conversion layer. Daemon architecture for hot model loading.</div>
                 <div class="project-tech">Piper TTS | RVC voice conversion | Perlin noise dynamics | IPC daemon</div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-name">PureNums <a href="https://github.com/dezmetal/Resume/tree/main/projects/PureNums">[view]</a></div>
+                <div class="project-desc">Quantum random number generator - fetches raw entropy from ANU Quantum API, purifies through SHA-256 hashing for statistical uniformity, includes validation benchmarking.</div>
+                <div class="project-tech">ANU Quantum API | Cryptographic hashing (SHA-256) | Statistical validation | Entropy analysis</div>
             </div>
 
             <div class="project-item">
@@ -378,12 +393,6 @@
             </div>
 
             <div class="project-item">
-                <div class="project-name">DeckGen <a href="https://github.com/dezmetal/Resume/tree/main/projects/DeckGen">[view]</a></div>
-                <div class="project-desc">Video/audio to study flashcards. Transcription, intelligent chunking, optional translation, Anki export.</div>
-                <div class="project-tech">Whisper transcription | Argos Translate | Anki format export | Chunking algorithms</div>
-            </div>
-
-            <div class="project-item">
                 <div class="project-name">Choir <a href="https://github.com/dezmetal/Resume/tree/main/projects/Choir">[view]</a></div>
                 <div class="project-desc">Experimental autonomous AI using local LLMs with continuous cognitive loop for processing without prompts.</div>
                 <div class="project-tech">llama-cpp-python | GGUF model loading | Autonomous loop design</div>
@@ -391,12 +400,14 @@
         </div>
 
         <div class="dss-section">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title">Education & Development</h2>
             <div class="content-card">
-                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.9rem;">
-                    <div><strong>International Studies</strong> - Mohawk Valley CC</div>
-                    <div><strong>IT Systems (Networking)</strong> - BOCES</div>
+                <div style="font-size: 0.9rem; margin-bottom: 0.75rem;">
+                    <strong>International Studies</strong> - Mohawk Valley CC &nbsp;|&nbsp; <strong>IT Systems (Networking)</strong> - BOCES
                 </div>
+                <p class="summary" style="margin-bottom: 0;">
+                    Technical skills developed through focused self-study, documentation immersion, and iterative project building. Each project in this portfolio represents problems I encountered, researched, and solved - building real competency through real application.
+                </p>
             </div>
         </div>
 
