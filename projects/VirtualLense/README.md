@@ -14,7 +14,7 @@ See the screen. Understand it. Act on it. VirtualLense captures regions, extract
 
 ## Philosophy
 
-> *"From mind to matter"*
+**From mind to matter.**
 
 The potential here is significant: any visual information on screen becomes accessible to automation. Status indicators, text displays, game state, application output - all can be read, interpreted, and acted upon.
 

@@ -14,7 +14,7 @@ AI assistants speak to us constantly now. Most sound robotic - flat, monotone, u
 
 ## Philosophy
 
-> *"With accessibility comes understanding"*
+**With accessibility comes understanding.**
 
 Voice is intimate. When software speaks, it enters a deeply human space. This project treats that seriously - not just generating audio, but crafting speech that respects the listener's experience.
 

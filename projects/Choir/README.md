@@ -14,7 +14,7 @@ Most AI systems are reactive - they wait for prompts, respond, then go silent. C
 
 ## Philosophy
 
-> *"Imagination" - seeing possibilities others miss*
+**Imagination - seeing possibilities others miss.**
 
 This project asks: what if AI didn't just respond to us, but had its own thoughts? Its own goals? The ability to daydream?
 

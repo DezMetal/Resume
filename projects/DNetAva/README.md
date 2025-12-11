@@ -14,7 +14,7 @@ Giving AI a face. A presence. Something to look at when it speaks. DNetAva rende
 
 ## Philosophy
 
-> *"From mind to matter"*
+**From mind to matter.**
 
 This project exemplifies the D-Net Lab ethos: conceived one night, realized the next day.
 

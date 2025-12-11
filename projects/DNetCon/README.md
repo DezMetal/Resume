@@ -14,7 +14,7 @@ Any program that can read a file can participate in an automated workflow. DNetC
 
 ## Philosophy
 
-> *"With accessibility comes understanding"*
+**With accessibility comes understanding.**
 
 Complex automation shouldn't require programming expertise. If someone can describe what they want - "when this file changes, run that script" - they should be able to build it.
 

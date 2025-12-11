@@ -14,7 +14,7 @@ Born from the language learning plateau. You've outgrown beginner resources but 
 
 ## Philosophy
 
-> *"With accessibility comes understanding and inspiration"*
+**With accessibility comes understanding and inspiration.**
 
 Traditional language learning hits a wall. Textbooks are finite. Beginner communities become too easy. Native content is frustrating. The middle ground barely exists.
 

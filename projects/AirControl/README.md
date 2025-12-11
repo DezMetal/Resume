@@ -14,7 +14,7 @@ Control your computer with hand gestures. No keyboard, no mouse - just natural h
 
 ## Philosophy
 
-> *"Increasing human bandwidth"*
+**Increasing human bandwidth.**
 
 The keyboard and mouse are bottlenecks. They require visual attention, precise positioning, specific finger movements. Gestures are different - they can be performed while looking elsewhere, can be broader and more intuitive.
 

@@ -14,7 +14,7 @@ The infrastructure for AI-powered services. DNet provides persona creation, conv
 
 ## Philosophy
 
-> *"Discretion" - sound technical decisions made independently*
+**Discretion - sound technical decisions made independently.**
 
 Building a platform requires making architectural choices that compound over time. Database design, authentication strategy, API structure - each decision shapes what's possible later.
 

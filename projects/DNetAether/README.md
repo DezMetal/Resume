@@ -14,7 +14,7 @@ Your hands are on the keyboard. Your attention is on code. But you need to captu
 
 ## Philosophy
 
-> *"Increasing human bandwidth"*
+**Increasing human bandwidth.**
 
 Every context switch costs focus. Every trip to the mouse, every alt-tab, every manual copy-paste - they accumulate into fragmented attention. This tool exists to eliminate those micro-interruptions.
 

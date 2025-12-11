@@ -14,7 +14,7 @@ True randomness matters. Pseudo-random generators follow patterns - predictable 
 
 ## Philosophy
 
-> *"From mind to matter"*
+**From mind to matter.**
 
 The question was simple: how do you get truly random numbers? Not pseudo-random. Not "good enough." Genuinely unpredictable.
 

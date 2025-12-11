@@ -14,7 +14,7 @@ Consistent visual identity across all D-Net projects. Geometric cuts, glow effec
 
 ## Philosophy
 
-> *"Discretion" - sound decisions made independently*
+**Discretion - sound decisions made independently.**
 
 Every D-Net project shares visual DNA. Not through copy-paste, but through a systematic design language. CSS variables define the vocabulary; components implement the grammar.
 

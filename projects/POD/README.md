@@ -14,7 +14,7 @@ Create one workflow. Create one product template. Then generate unlimited ready-
 
 ## Philosophy
 
-> *"Automation should multiply effort, not just save it"*
+**Automation should multiply effort, not just save it.**
 
 The difference matters. Saving time is linear - do in 5 minutes what took 10. Multiplying effort is exponential - one configuration generates unlimited output.
 
