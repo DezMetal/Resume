@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desmond W. Clay - Developer Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 0.5rem;
+            top: 1.25rem;
+            bottom: 0;
+            width: 2px;
+            background-color: #d1d5db;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 1.25rem;
+            height: 1rem;
+            width: 1rem;
+            background-color: #ffffff;
+            border: 2px solid #3b82f6;
+            border-radius: 9999px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0c4a6e;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+<div class="max-w-4xl mx-auto p-4 sm:p-8 bg-white shadow-2xl rounded-2xl my-8">
+
+    <!-- Header Section -->
+    <header class="text-center border-b-2 border-slate-200 pb-8 mb-8">
+        <h1 class="text-5xl font-extrabold text-slate-900">Desmond W. Clay</h1>
+        <p class="text-lg text-slate-600 mt-2">Developer | Problem Solver | Rapid Learner</p>
+        <div class="flex justify-center items-center flex-wrap gap-x-6 gap-y-2 mt-4 text-sm text-slate-500">
+            <span>(315) 338-4480</span>
+            <span class="hidden sm:inline">&bull;</span>
+            <span>D.W.Clay94@gmail.com</span>
+            <span class="hidden sm:inline">&bull;</span>
+            <span>lab.dnet.live</span>
+        </div>
+    </header>
+
+    <!-- Summary Section -->
+    <section class="mb-10">
+        <h2 class="text-2xl font-bold text-slate-900 text-center border-b-2 border-slate-200 pb-2 mb-4">Summary</h2>
+        <p class="text-slate-600 leading-relaxed mb-3">
+            Developer with a portfolio of <strong class="text-slate-800">working, interconnected applications</strong> spanning voice-controlled productivity tools, workflow automation, and e-commerce pipelines. I build software that increases human bandwidth - tools that make complex tasks accessible and free people to focus on what matters.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+            What I bring: the <strong class="text-slate-800">mind</strong> to architect creative solutions, the <strong class="text-slate-800">motivation</strong> to master unfamiliar technologies quickly, the <strong class="text-slate-800">discretion</strong> to make sound technical decisions independently, and the <strong class="text-slate-800">imagination</strong> to see possibilities others miss.
+        </p>
+    </section>
+
+    <!-- Main Content Grid -->
+    <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Left Column - Skills & Info -->
+        <div class="lg:col-span-1">
+            <!-- At a Glance -->
+            <h2 class="text-2xl font-bold text-slate-900 text-center border-b-2 border-slate-200 pb-2 mb-4">At a Glance</h2>
+            <ul class="space-y-3 text-sm">
+                <li class="flex items-center"><svg class="w-5 h-5 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><strong>Full-Stack Development</strong></li>
+                <li class="flex items-center"><svg class="w-5 h-5 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><strong>Generative &amp; Agentic AI</strong></li>
+                <li class="flex items-center"><svg class="w-5 h-5 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><strong>Workflow Automation</strong></li>
+                <li class="flex items-center"><svg class="w-5 h-5 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><strong>Leadership &amp; Team Management</strong></li>
+                <li class="flex items-center"><svg class="w-5 h-5 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><strong>Adaptability &amp; Rapid Learning</strong></li>
+            </ul>
+
+            <!-- Core Competencies -->
+            <h2 class="text-2xl font-bold text-slate-900 text-center border-b-2 border-slate-200 pb-2 mb-4 mt-10">Core Competencies</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-semibold text-blue-700">Languages &amp; Frameworks</h3>
+                    <p class="text-slate-600 text-sm">Python, Flask, JavaScript, HTML/CSS, GDScript, <strong>SQLAlchemy</strong></p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-blue-700">AI &amp; Data</h3>
+                    <p class="text-slate-600 text-sm">LLM Integration, <strong>API Integration</strong>, Data Validation, <strong>Cryptography</strong>, Audio Signal Processing, RAG, NLP</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-blue-700">Tools &amp; Platforms</h3>
+                    <p class="text-slate-600 text-sm">Git/GitHub, Docker, Godot Engine, Leap Motion SDK, <strong>Google Cloud Platform</strong></p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-blue-700">Professional Skills</h3>
+                    <p class="text-slate-600 text-sm"><strong>Leadership</strong>, Team Building, <strong>Operational Management</strong>, Process Improvement, Client Relations</p>
+                </div>
+            </div>
+
+            <!-- Applied Interests -->
+            <h2 class="text-2xl font-bold text-slate-900 text-center border-b-2 border-slate-200 pb-2 mb-4 mt-10">Applied Interests</h2>
+            <div class="space-y-4 text-sm">
+                <div>
+                    <h3 class="font-semibold text-blue-700">Creative Engineering</h3>
+                    <p class="text-slate-600">Exploring digital fabrication, <strong>prototyping</strong>, and composing with MIDI.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-blue-700">System Automation</h3>
+                    <p class="text-slate-600">A constant search for opportunities to build tools that streamline <strong>repetitive tasks</strong>.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-blue-700">Continuous Learning</h3>
+                    <p class="text-slate-600">A natural drive to deconstruct complex systems and acquire <strong>new skills</strong>.</p>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <h2 class="text-2xl font-bold text-slate-900 text-center border-b-2 border-slate-200 pb-2 mb-4 mt-10">Education</h2>
+            <div class="space-y-3 text-sm">
+                <div>
+                    <h3 class="font-semibold text-blue-700">International Studies</h3>
+                    <p class="text-slate-600">Mohawk Valley CC</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-blue-700">IT Systems (Networking)</h3>
+                    <p class="text-slate-600">BOCES</p>
+                </div>
+                <p class="text-slate-500 text-xs mt-4 italic">
+                    Technical skills developed through focused self-study and iterative project building.
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Column - Experience -->
+        <div class="lg:col-span-2">
+            <h2 class="text-2xl font-bold text-slate-900 text-center border-b-2 border-slate-200 pb-2 mb-6">Professional Experience</h2>
+            <div class="relative space-y-4">
+                <div class="timeline-line"></div>
+
+                <!-- 2025 - Byrne Dairy -->
+                <div class="relative pl-8">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-slate-500">2025</p>
+                    <h3 class="text-lg font-bold text-blue-700">Assistant Manager | Byrne Dairy</h3>
+                    <p class="text-slate-600 mt-1 text-sm">Manage daily store operations and lead a small team, providing guidance and training to foster a <strong>collaborative and productive</strong> work environment.</p>
+                </div>
+                <br>
+
+                <!-- 2019 - Ongoing: D-Net Lab -->
+                <div class="relative pl-8">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-slate-500">2019 - Ongoing</p>
+                    <h3 class="text-lg font-bold text-blue-700">Founder / Developer | D-Net Lab</h3>
+                    <ul class="text-slate-600 mt-2 text-sm space-y-1 list-disc list-inside">
+                        <li>Created D-Net Lab as a platform for building interconnected productivity tools and exploring <strong>human-AI collaboration</strong></li>
+                        <li>Developed a cohesive ecosystem where applications share components, APIs, and design language - enabling <strong>rapid prototyping</strong></li>
+                        <li>Established practices for modular architecture and git submodule management</li>
+                        <li>Competent with modern <strong>AI-assisted development workflows</strong></li>
+                    </ul>
+                </div>
+                <br>
+
+                <!-- 2021-2022: Nursing Home -->
+                <div class="relative pl-8">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-slate-500">2021 - 2022</p>
+                    <h3 class="text-lg font-bold text-blue-700">Activities Team Lead | Betsy Ross Nursing Home</h3>
+                    <p class="text-slate-600 mt-1 text-sm">Led team designing social activities for 50+ residents, demonstrating <strong>planning and interpersonal skills</strong> with elderly populations.</p>
+                </div>
+                <br>
+
+                <!-- 2020-2024: Delivery -->
+                <div class="relative pl-8">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-slate-500">2020 - 2024</p>
+                    <h3 class="text-lg font-bold text-blue-700">Independent Contractor | DoorDash / Instacart</h3>
+                    <p class="text-slate-600 mt-1 text-sm">Demonstrated exceptional <strong>reliability and time management</strong> in independent, customer-facing roles while building technical portfolio.</p>
+                </div>
+                <br>
+
+                <!-- 2020: Summer Camp -->
+                <div class="relative pl-8">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-slate-500">2020</p>
+                    <h3 class="text-lg font-bold text-blue-700">Summer Camp Coach | Rome's Best</h3>
+                    <p class="text-slate-600 mt-1 text-sm">Supervised groups of up to 30 children, requiring <strong>patience, adaptability, and quick decision-making</strong>.</p>
+                </div>
+                <br>
+
+                <!-- 2019: Janitorial Company -->
+                <div class="relative pl-8">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-slate-500">2019</p>
+                    <h3 class="text-lg font-bold text-blue-700">Full-Stack Developer | Local Janitorial Company</h3>
+                    <p class="text-slate-600 mt-1 text-sm">Held a dual role, applying technical skills to build and maintain websites while also performing <strong>warehouse operations</strong> and janitorial duties.</p>
+                </div>
+                <br>
+
+                <!-- 2017-2019: Harbor Freight -->
+                <div class="relative pl-8">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-slate-500">2017 - 2019</p>
+                    <h3 class="text-lg font-bold text-blue-700">Sales Supervisor | Harbor Freight Tools</h3>
+                    <p class="text-slate-600 mt-1 text-sm">Built and led 8-person team during new store launch, achieved <strong>top regional performance</strong>. Excelled in customer relations by skillfully resolving disputes.</p>
+                </div>
+                <br>
+
+                <!-- 2015: Thrifty Shopper -->
+                <div class="relative pl-8">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-slate-500">2015</p>
+                    <h3 class="text-lg font-bold text-blue-700">Associate | Thrifty Shopper</h3>
+                    <p class="text-slate-600 mt-1 text-sm"><strong>Key holder</strong> position responsible for opening/closing, running register, and assisting customers.</p>
+                </div>
+
+                <div class="text-center text-slate-400 tracking-widest mt-4">...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <h2 class="text-2xl font-bold text-slate-900 text-center border-b-2 border-slate-200 pb-2 mb-4 mt-12">Selected Projects</h2>
+
+
+    <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">DNetAether</h3>
+            <p class="text-slate-600 mt-1 text-sm">Voice productivity tool - hotkey triggers transcription, output to clipboard. Modes: dictation, LLM text refinement, natural-language-to-code, conversational AI with voice feedback.</p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">Whisper ASR</span><span class="tag">Gemini API</span><span class="tag">Piper TTS</span></div>
+        </div>
+
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">DNetCon</h3>
+            <p class="text-slate-600 mt-1 text-sm">Workflow orchestration - chain programs together via file-based IPC. Schedule triggers, file-watch triggers, conditional logic. Plugins auto-generate their own web UI.</p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">Watchdog</span><span class="tag">Plugin Architecture</span><span class="tag">Dynamic UI</span></div>
+        </div>
+
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">D-Net Platform</h3>
+            <p class="text-slate-600 mt-1 text-sm">Multi-tenant web application with AI personas, content management, tiered Stripe subscriptions for user access, plus seller storefront integration.</p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">Stripe API</span><span class="tag">Multi-tenancy</span><span class="tag">Role-based Access</span></div>
+        </div>
+
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">POD Pipeline</h3>
+            <p class="text-slate-600 mt-1 text-sm">Print-on-demand automation - images in, store full of products out. Orchestrates AI image processing with product deployment. <strong>Serves paying clients.</strong></p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">ComfyUI API</span><span class="tag">Printify API</span><span class="tag">WebSocket</span></div>
+        </div>
+
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">DNetAva</h3>
+            <p class="text-slate-600 mt-1 text-sm">Secure API-based interaction layer for 3D environments. Any application can control the scene through authenticated REST/WebSocket payloads.</p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">Three.js</span><span class="tag">WebSocket</span><span class="tag">JWT</span></div>
+        </div>
+
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">StreamAudio</h3>
+            <p class="text-slate-600 mt-1 text-sm">Neural TTS module with dynamic pitch/speed variation for natural speech. RVC voice conversion layer. Daemon architecture for hot model loading.</p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">Piper TTS</span><span class="tag">RVC</span><span class="tag">IPC Daemon</span></div>
+        </div>
+
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">PureNums</h3>
+            <p class="text-slate-600 mt-1 text-sm">Quantum random number generator - fetches raw entropy from ANU Quantum API, purifies through SHA-256 hashing for statistical uniformity.</p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">Quantum API</span><span class="tag">Cryptography</span><span class="tag">SHA-256</span></div>
+        </div>
+
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">VirtualLense</h3>
+            <p class="text-slate-600 mt-1 text-sm">Screen region analysis with configurable overlays. Text extraction, change detection for monitoring and automation.</p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">EasyOCR</span><span class="tag">OpenCV</span><span class="tag">Tkinter</span></div>
+        </div>
+
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">AirControl</h3>
+            <p class="text-slate-600 mt-1 text-sm">Gesture-based computer control via Leap Motion sensor with web UI for training custom hand poses.</p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">Leap Motion SDK</span><span class="tag">Gesture Recognition</span></div>
+        </div>
+
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">IsekaiAdventure</h3>
+            <p class="text-slate-600 mt-1 text-sm">AI language learning RPG - learn Japanese through immersive story interactions with intelligent context management.</p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">LLM</span><span class="tag">Context Management</span><span class="tag">Interactive Fiction</span></div>
+        </div>
+
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">Choir</h3>
+            <p class="text-slate-600 mt-1 text-sm">Experimental autonomous AI using local LLMs with continuous cognitive loop for processing without prompts.</p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">llama-cpp-python</span><span class="tag">GGUF</span><span class="tag">Autonomous Loop</span></div>
+        </div>
+
+        <div class="p-4 rounded-lg border border-slate-200">
+            <h3 class="text-lg font-bold text-blue-700">Envoy</h3>
+            <p class="text-slate-600 mt-1 text-sm">AI Interviewer Agent - conducts natural conversations to extract specific data points, replacing static forms with adaptive, engaging interactions that generate comprehensive reports.</p>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="tag">Gemini API</span><span class="tag">Flask</span><span class="tag">Data Extraction</span></div>
+        </div>
+    </div>
+
+    <div class="text-center text-slate-400 tracking-widest mt-6">...</div>
+
+</div>
+
+</body>
+</html>
